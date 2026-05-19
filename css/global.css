@@ -169,6 +169,12 @@ p {
   gap: 10px;
 }
 
+.logo-image {
+  display: block;
+  height: 46px;
+  width: auto;
+}
+
 .logo-mark {
   align-items: center;
   background: linear-gradient(135deg, var(--pink), var(--blue));
@@ -182,6 +188,10 @@ p {
   justify-content: center;
   transform: rotate(-3deg);
   width: 42px;
+}
+
+.footer .logo-image {
+  height: 42px;
 }
 
 .nav-links {
