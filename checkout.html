@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | StudyBoost</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Patrick+Hand&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/checkout.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar Start -->
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="logo" href="index.html"><span class="logo-mark">SB</span><span class="logo-text">StudyBoost</span></a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="products.html">Products</a>
+          <a href="cart.html">Cart</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <a class="cart-button" href="cart.html" aria-label="View cart"><span aria-hidden="true">&#128722;</span><span class="cart-count" data-cart-count>0</span></a>
+      </nav>
+    </header>
+    <!-- Navigation Bar End -->
+
+    <main>
+      <!-- Checkout Section Start -->
+      <section class="section-band reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Simulated checkout</p>
+          <h1>Complete your digital order.</h1>
+          <p>This checkout is for demonstration only. No real payment is collected.</p>
+        </div>
+
+        <div class="checkout-layout">
+          <form class="checkout-form" id="checkoutForm">
+            <h2>Student details</h2>
+            <label>Name<input type="text" id="customerName" placeholder="Your name" required /></label>
+            <label>Email<input type="email" id="customerEmail" placeholder="you@example.com" required /></label>
+            <label>Payment method
+              <select id="paymentMethod" required>
+                <option value="Demo card">Demo card</option>
+                <option value="Online banking demo">Online banking demo</option>
+                <option value="E-wallet demo">E-wallet demo</option>
+              </select>
+            </label>
+            <button class="button primary full" type="submit">Place Order</button>
+          </form>
+
+          <aside class="checkout-summary">
+            <h2>Digital delivery</h2>
+            <p>After simulated payment, your selected files are marked as ready to download.</p>
+            <div id="checkoutItems"></div>
+            <div class="summary-row total-row"><span>Total</span><strong id="checkoutTotal">RM0</strong></div>
+          </aside>
+        </div>
+      </section>
+      <!-- Checkout Section End -->
+    </main>
+
+    <!-- Checkout Success Popup Start -->
+    <div class="modal-backdrop" id="successModal" aria-hidden="true">
+      <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+        <div class="success-badge">&#10003;</div>
+        <h2 id="successTitle">Checkout complete!</h2>
+        <p>Your StudyBoost downloads are ready. This was a simulated order for assessment purposes.</p>
+        <div class="download-list" id="downloadList"></div>
+        <a class="button primary" href="products.html">Back to Products</a>
+      </section>
+    </div>
+    <!-- Checkout Success Popup End -->
+
+    <footer class="footer"><div class="footer-inner"><a class="logo" href="index.html"><span class="logo-mark">SB</span><span class="logo-text">StudyBoost</span></a><p>&copy; 2026 StudyBoost.</p></div></footer>
+    <script src="js/cart.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/checkout.js" defer></script>
+    <script src="js/animations.js" defer></script>
+  </body>
+</html>

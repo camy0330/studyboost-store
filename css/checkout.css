@@ -1,0 +1,133 @@
+/* Checkout Page Layout */
+.checkout-layout {
+  align-items: start;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr minmax(300px, 390px);
+}
+
+.checkout-form,
+.checkout-summary {
+  background: rgba(255, 255, 255, 0.78);
+  border: var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow-soft);
+  padding: 24px;
+}
+
+.checkout-form {
+  display: grid;
+  gap: 14px;
+}
+
+.checkout-form label {
+  display: grid;
+  gap: 8px;
+  font-weight: 900;
+}
+
+.checkout-item {
+  align-items: center;
+  background: var(--white);
+  border: var(--border);
+  border-radius: 18px;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding: 14px;
+}
+
+.checkout-item span {
+  align-items: center;
+  background: var(--blue);
+  border-radius: 14px;
+  display: flex;
+  font-size: 1.5rem;
+  height: 46px;
+  justify-content: center;
+  width: 46px;
+}
+
+.summary-row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.total-row {
+  border-top: var(--border);
+  font-size: 1.2rem;
+  margin-top: 14px;
+  padding-top: 16px;
+}
+
+/* Checkout Success Popup */
+.modal-backdrop {
+  background: rgba(44, 36, 30, 0.34);
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  transition: opacity 0.22s ease;
+  z-index: 100;
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.checkout-modal {
+  background: var(--cream);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  left: 50%;
+  max-width: 480px;
+  padding: 34px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 32px);
+}
+
+.success-badge {
+  align-items: center;
+  animation: successPulse 1.1s ease infinite alternate;
+  background: var(--mint);
+  border: 2px solid rgba(104, 68, 45, 0.22);
+  border-radius: 50%;
+  color: var(--brown);
+  display: inline-flex;
+  font-size: 2rem;
+  font-weight: 900;
+  height: 72px;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 72px;
+}
+
+.download-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 18px 0 22px;
+}
+
+.download-list span {
+  background: var(--white);
+  border: var(--border);
+  border-radius: 999px;
+  color: var(--brown);
+  display: inline-flex;
+  font-size: 0.88rem;
+  font-weight: 900;
+  padding: 9px 12px;
+}
+
+@keyframes successPulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}

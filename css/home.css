@@ -1,0 +1,311 @@
+/* Hero Section */
+.hero {
+  align-items: center;
+  display: grid;
+  gap: 50px;
+  grid-template-columns: minmax(0, 1.03fr) minmax(320px, 0.97fr);
+  min-height: calc(100vh - 76px);
+  position: relative;
+}
+
+.hero::before {
+  background-image: radial-gradient(circle at 1px 1px, rgba(104, 68, 45, 0.18) 1px, transparent 0);
+  background-size: 26px 26px;
+  content: "";
+  inset: 0;
+  opacity: 0.42;
+  pointer-events: none;
+  position: absolute;
+}
+
+.hero-content,
+.hero-board {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-actions,
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.hero-trust {
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.hero-trust span {
+  background: rgba(255, 255, 255, 0.72);
+  border: var(--border);
+  border-radius: 999px;
+  color: var(--brown);
+  font-size: 0.88rem;
+  font-weight: 800;
+  padding: 9px 12px;
+}
+
+/* Doodle Decorations
+   Doodles are placed only around safe hero edges so they never cover headings,
+   descriptions, product names, prices, or buttons. */
+.doodle {
+  animation: floatDoodle 5s ease-in-out infinite;
+  color: var(--brown);
+  font-size: clamp(1.8rem, 3vw, 3.25rem);
+  opacity: 0.32;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.doodle-laptop { right: 3%; top: 10%; transform: rotate(-9deg); }
+/* This doodle was removed from the hero because the center area is reserved for readable content. */
+.doodle-pen { display: none; }
+.doodle-coffee { bottom: 4%; left: -6%; transform: rotate(10deg); }
+.doodle-headphones { bottom: 6%; right: 2%; transform: rotate(-12deg); }
+
+/* Hero Board Styling */
+.hero-board {
+  background: rgba(255, 255, 255, 0.72);
+  border: 2px solid rgba(104, 68, 45, 0.22);
+  border-radius: 34px;
+  box-shadow: var(--shadow);
+  min-height: 450px;
+  overflow: hidden;
+  padding: 30px;
+}
+
+.hero-board::before,
+.hero-board::after {
+  border: 2px dashed rgba(104, 68, 45, 0.25);
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+}
+
+.hero-board::before {
+  height: 150px;
+  right: -44px;
+  top: -42px;
+  width: 150px;
+}
+
+.hero-board::after {
+  bottom: -50px;
+  height: 180px;
+  left: -42px;
+  width: 180px;
+}
+
+.paper-note,
+.doodle-card,
+.sticker {
+  border: 2px solid rgba(104, 68, 45, 0.28);
+  box-shadow: 10px 10px 0 rgba(104, 68, 45, 0.08);
+  position: absolute;
+}
+
+.paper-note {
+  border-radius: 18px;
+  display: grid;
+  gap: 8px;
+  padding: 24px;
+  width: min(230px, 42vw);
+}
+
+.paper-note span {
+  color: rgba(44, 36, 30, 0.62);
+  font-family: "Patrick Hand", cursive;
+  font-size: 1.2rem;
+}
+
+.paper-note strong {
+  font-size: 1.72rem;
+}
+
+.paper-note small {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.note-blue { background: var(--blue); left: 40px; top: 54px; transform: rotate(-5deg); }
+.note-pink { background: var(--pink); right: 42px; top: 160px; transform: rotate(4deg); }
+
+.sticker {
+  align-items: center;
+  border-radius: 999px;
+  display: flex;
+  font-family: "Patrick Hand", cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  justify-content: center;
+}
+
+.sticker-one { background: var(--mint); height: 78px; right: 74px; top: 38px; width: 78px; }
+.sticker-two { background: var(--sand); bottom: 62px; color: var(--white); height: 70px; left: 72px; width: 108px; }
+
+.doodle-card {
+  background: var(--white);
+  border-radius: 18px;
+  bottom: 86px;
+  font-family: "Patrick Hand", cursive;
+  font-size: 1.35rem;
+  padding: 18px 20px;
+  right: 46px;
+  transform: rotate(-3deg);
+}
+
+/* Featured Categories */
+.category-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.category-card,
+.stat-card,
+.review-card,
+.delivery-note,
+.why-grid article {
+  background: rgba(255, 255, 255, 0.76);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.category-card {
+  min-height: 220px;
+  padding: 24px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.category-card:hover,
+.review-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-6px);
+}
+
+.category-card span {
+  align-items: center;
+  background: linear-gradient(135deg, var(--pink-2), var(--blue-2));
+  border: var(--border);
+  border-radius: 16px;
+  display: inline-flex;
+  font-size: 2rem;
+  height: 58px;
+  justify-content: center;
+  margin-bottom: 18px;
+  width: 58px;
+}
+
+/* Statistics Cards */
+.stats {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding-bottom: 42px;
+  padding-top: 42px;
+}
+
+.stat-card {
+  padding: 24px;
+  text-align: center;
+}
+
+.stat-card strong {
+  color: var(--brown);
+  display: block;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-card span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+/* About, Reviews, Contact and CTA */
+.why,
+.contact {
+  background: rgba(242, 223, 196, 0.44);
+  border: var(--border);
+  border-radius: 34px;
+  display: grid;
+  gap: 38px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
+  margin-bottom: 36px;
+  margin-top: 36px;
+  position: relative;
+}
+
+.why-grid,
+.contact-form {
+  display: grid;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.why-grid article,
+.review-card {
+  padding: 24px;
+}
+
+.why-grid span {
+  color: var(--brown);
+  display: block;
+  font-family: "Patrick Hand", cursive;
+  font-size: 1.45rem;
+  margin-bottom: 6px;
+}
+
+.cta-band {
+  align-items: center;
+  background: linear-gradient(135deg, rgba(255, 214, 223, 0.88), rgba(207, 232, 247, 0.88));
+  border: var(--border);
+  border-radius: 34px;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin: 20px auto;
+  max-width: 1136px;
+  padding: 34px;
+}
+
+.review-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stars {
+  color: var(--gold);
+  font-size: 0.98rem;
+  margin-bottom: 16px;
+}
+
+.review-card strong,
+.review-card span {
+  display: block;
+}
+
+.review-card span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 8px;
+  font-weight: 900;
+}
+
+@keyframes floatDoodle {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -10px; }
+}

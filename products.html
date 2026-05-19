@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products | StudyBoost</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Patrick+Hand&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/products.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar Start -->
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="logo" href="index.html"><span class="logo-mark">SB</span><span class="logo-text">StudyBoost</span></a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="products.html" class="active">Products</a>
+          <a href="cart.html">Cart</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <a class="cart-button" href="cart.html" aria-label="View cart"><span aria-hidden="true">&#128722;</span><span class="cart-count" data-cart-count>0</span></a>
+      </nav>
+    </header>
+    <!-- Navigation Bar End -->
+
+    <main>
+      <!-- Products Header Start -->
+      <section class="page-hero section-band reveal">
+        <p class="eyebrow">Digital shelf</p>
+        <h1>Shop student study tools.</h1>
+        <p>Browse planners, trackers, templates, dashboards, timetables, and revision sets with simulated digital delivery.</p>
+      </section>
+      <!-- Products Header End -->
+
+      <!-- Product Controls Start -->
+      <section class="section-wrap products-page reveal">
+        <div class="shop-heading">
+          <div class="section-heading">
+            <p class="eyebrow">All products</p>
+            <h2>StudyBoost shop</h2>
+            <p>Use search and categories to find the right digital product for your semester.</p>
+          </div>
+          <div class="delivery-note">
+            <strong>Digital delivery</strong>
+            <span>Checkout is simulated. Files are shown as ready for instant download.</span>
+          </div>
+        </div>
+
+        <div class="shop-controls" aria-label="Product filters">
+          <label class="search-field" for="productSearch">
+            <span>Search products</span>
+            <input type="search" id="productSearch" placeholder="Search planners, trackers, templates..." />
+          </label>
+          <div class="filter-buttons" id="filterButtons">
+            <button class="filter active" type="button" data-category="All">All</button>
+            <button class="filter" type="button" data-category="Planning">Planning</button>
+            <button class="filter" type="button" data-category="Finance">Finance</button>
+            <button class="filter" type="button" data-category="Templates">Templates</button>
+            <button class="filter" type="button" data-category="Revision">Revision</button>
+          </div>
+        </div>
+
+        <!-- Product Grid: JavaScript renders cards here -->
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      </section>
+      <!-- Product Controls End -->
+    </main>
+
+    <footer class="footer"><div class="footer-inner"><a class="logo" href="index.html"><span class="logo-mark">SB</span><span class="logo-text">StudyBoost</span></a><p>&copy; 2026 StudyBoost.</p></div></footer>
+    <script src="js/cart.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/products.js" defer></script>
+    <script src="js/animations.js" defer></script>
+  </body>
+</html>

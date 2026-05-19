@@ -1,0 +1,538 @@
+/* Product Page Header */
+.products-page {
+  position: relative;
+}
+
+.shop-heading {
+  align-items: end;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr minmax(260px, 360px);
+}
+
+.delivery-note {
+  background: rgba(255, 255, 255, 0.76);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 18px;
+}
+
+.delivery-note strong,
+.delivery-note span {
+  display: block;
+}
+
+.delivery-note strong {
+  color: var(--brown);
+  margin-bottom: 8px;
+}
+
+/* Product Filter Controls */
+.shop-controls {
+  align-items: end;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(260px, 430px) 1fr;
+  margin-bottom: 28px;
+}
+
+.search-field {
+  display: grid;
+  gap: 8px;
+  font-weight: 900;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.filter {
+  background: var(--white);
+  border: var(--border);
+  border-radius: 999px;
+  color: var(--brown);
+  cursor: pointer;
+  font-weight: 900;
+  min-height: 42px;
+  padding: 0 16px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.filter:hover {
+  transform: translateY(-2px);
+}
+
+.filter.active {
+  background: var(--blue);
+  border-color: rgba(104, 68, 45, 0.34);
+}
+
+/* Product Grid Layout
+   Each product card is split into a safe image area and a separate content/action
+   area, so mockups can never cover product names, prices, or buttons. */
+.product-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  min-height: 470px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.product-card:hover,
+.trend-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-6px);
+}
+
+.product-card.featured::before {
+  background: var(--mint);
+  border: var(--border);
+  border-radius: 999px;
+  color: var(--brown);
+  content: "Trending";
+  font-size: 0.72rem;
+  font-weight: 900;
+  left: 16px;
+  padding: 7px 10px;
+  position: absolute;
+  top: 16px;
+  z-index: 2;
+}
+
+.product-art {
+  align-items: center;
+  background:
+    linear-gradient(135deg, rgba(255, 214, 223, 0.76), rgba(207, 232, 247, 0.84)),
+    radial-gradient(circle at 16px 16px, rgba(104, 68, 45, 0.14) 2px, transparent 3px);
+  background-size: auto, 34px 34px;
+  display: flex;
+  height: 178px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 24px;
+  position: relative;
+}
+
+/* Product Mockup Logic
+   These CSS mockups replace random icons with product previews that look like
+   real digital downloads: laptop dashboards, tablet timetables, worksheets,
+   phone flashcards, Canva previews, and spreadsheet trackers. */
+.product-mockup {
+  position: relative;
+  z-index: 1;
+}
+
+.mockup-window,
+.mockup-tablet,
+.mockup-phone,
+.mockup-paper,
+.mockup-canva,
+.mockup-sheet {
+  background: var(--paper);
+  border: 2px solid rgba(104, 68, 45, 0.2);
+  box-shadow: 0 16px 30px rgba(87, 61, 39, 0.16);
+}
+
+.mockup-window {
+  border-radius: 12px;
+  height: 106px;
+  overflow: hidden;
+  width: 178px;
+}
+
+.window-bar {
+  align-items: center;
+  background: var(--brown);
+  display: flex;
+  gap: 5px;
+  height: 18px;
+  padding-left: 10px;
+}
+
+.window-bar span {
+  background: var(--pink);
+  border-radius: 50%;
+  height: 6px;
+  width: 6px;
+}
+
+.mockup-lines {
+  display: grid;
+  gap: 7px;
+  padding: 13px;
+}
+
+.mockup-lines span,
+.sheet-row span,
+.flashcard-line {
+  background: rgba(104, 68, 45, 0.16);
+  border-radius: 999px;
+  display: block;
+  height: 8px;
+}
+
+.mockup-lines span:nth-child(1) { width: 72%; }
+.mockup-lines span:nth-child(2) { width: 94%; }
+.mockup-lines span:nth-child(3) { width: 55%; }
+
+.mockup-grid {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 12px;
+}
+
+.mockup-grid span {
+  background: var(--blue);
+  border-radius: 7px;
+  height: 22px;
+}
+
+.mockup-tablet {
+  border-radius: 22px;
+  height: 118px;
+  padding: 14px;
+  width: 150px;
+}
+
+.tablet-screen {
+  background: linear-gradient(135deg, var(--blue-2), var(--pink-2));
+  border-radius: 14px;
+  display: grid;
+  gap: 7px;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
+  padding: 12px;
+}
+
+.tablet-screen span {
+  background: rgba(104, 68, 45, 0.18);
+  border-radius: 6px;
+}
+
+.mockup-paper {
+  border-radius: 12px;
+  height: 126px;
+  padding: 16px;
+  transform: rotate(-3deg);
+  width: 118px;
+}
+
+.paper-title {
+  background: var(--pink);
+  border-radius: 999px;
+  height: 14px;
+  margin-bottom: 13px;
+  width: 72%;
+}
+
+.paper-check {
+  align-items: center;
+  display: grid;
+  gap: 8px;
+}
+
+.paper-check span {
+  border-bottom: 2px solid rgba(104, 68, 45, 0.24);
+  height: 14px;
+}
+
+.mockup-phone {
+  border-radius: 24px;
+  height: 132px;
+  padding: 13px 10px;
+  width: 76px;
+}
+
+.phone-screen {
+  background: var(--blue-2);
+  border-radius: 17px;
+  display: grid;
+  gap: 8px;
+  height: 100%;
+  padding: 13px 9px;
+}
+
+.flashcard-line:nth-child(1) {
+  background: var(--pink);
+  height: 24px;
+}
+
+.mockup-canva {
+  border-radius: 14px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 0.7fr 1fr;
+  height: 118px;
+  padding: 14px;
+  width: 166px;
+}
+
+.canva-sidebar {
+  background: var(--pink-2);
+  border-radius: 10px;
+}
+
+.canva-page {
+  background: var(--paper);
+  border: 1px solid rgba(104, 68, 45, 0.16);
+  border-radius: 10px;
+  display: grid;
+  gap: 7px;
+  padding: 10px;
+}
+
+.canva-page span {
+  background: rgba(104, 68, 45, 0.16);
+  border-radius: 999px;
+  height: 8px;
+}
+
+.mockup-sheet {
+  border-radius: 12px;
+  height: 114px;
+  overflow: hidden;
+  width: 172px;
+}
+
+.sheet-header {
+  background: var(--mint);
+  height: 22px;
+}
+
+.sheet-row {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 8px 10px 0;
+}
+
+.product-mockup.large .mockup-window,
+.product-mockup.large .mockup-sheet,
+.product-mockup.large .mockup-canva {
+  transform: scale(1.45);
+}
+
+.product-mockup.large .mockup-tablet,
+.product-mockup.large .mockup-paper,
+.product-mockup.large .mockup-phone {
+  transform: scale(1.55);
+}
+
+.wishlist-button,
+.quick-view {
+  align-items: center;
+  background: var(--white);
+  border: var(--border);
+  color: var(--brown);
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.wishlist-button {
+  border-radius: 50%;
+  font-size: 1.35rem;
+  height: 42px;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 42px;
+  z-index: 3;
+}
+
+.wishlist-button.active {
+  background: var(--pink);
+  color: #b23d5a;
+}
+
+.quick-view {
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 900;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 14px;
+}
+
+.product-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+.product-top,
+.product-bottom {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.product-top {
+  align-items: start;
+}
+
+.product-bottom {
+  margin-top: 10px;
+}
+
+.product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.product-category {
+  color: rgba(44, 36, 30, 0.62);
+  font-family: "Patrick Hand", cursive;
+  font-size: 1.2rem;
+}
+
+.discount {
+  background: var(--pink);
+  border-radius: 999px;
+  color: var(--brown);
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 7px 9px;
+}
+
+.rating {
+  color: var(--gold);
+  font-size: 0.92rem;
+  font-weight: 900;
+}
+
+.product-description {
+  margin-bottom: auto;
+}
+
+.product-meta {
+  color: rgba(44, 36, 30, 0.58);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  font-weight: 800;
+  gap: 8px;
+}
+
+.product-meta span {
+  background: var(--pink-2);
+  border-radius: 999px;
+  padding: 7px 9px;
+}
+
+.price {
+  color: var(--brown);
+  font-size: 1.52rem;
+  font-weight: 900;
+}
+
+.small-add {
+  min-height: 42px;
+  padding: 0 16px;
+}
+
+/* Trending Product Cards */
+.trending-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.trend-card {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.76);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  gap: 16px;
+  padding: 18px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.trend-icon {
+  align-items: center;
+  background: linear-gradient(135deg, var(--pink-2), var(--blue-2));
+  border: var(--border);
+  border-radius: 16px;
+  display: inline-flex;
+  flex: 0 0 58px;
+  height: 58px;
+  justify-content: center;
+  overflow: hidden;
+  width: 58px;
+}
+
+.trend-icon .product-mockup {
+  transform: scale(0.34);
+}
+
+/* Product Details Page */
+.product-detail {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.78);
+  border: var(--border);
+  border-radius: 34px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 34px;
+  grid-template-columns: minmax(260px, 0.8fr) 1fr;
+  padding: 32px;
+}
+
+.detail-art {
+  align-items: center;
+  background: linear-gradient(135deg, var(--pink), var(--blue));
+  border-radius: 28px;
+  display: flex;
+  min-height: 360px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 42px;
+}
+
+.detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.detail-meta span {
+  background: var(--pink-2);
+  border-radius: 999px;
+  color: var(--brown);
+  font-weight: 900;
+  padding: 9px 12px;
+}
+
+.empty-state {
+  background: rgba(255, 255, 255, 0.76);
+  border: var(--border);
+  border-radius: var(--radius);
+  grid-column: 1 / -1;
+  padding: 32px;
+  text-align: center;
+}

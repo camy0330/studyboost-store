@@ -1,0 +1,156 @@
+/* Cart Page Layout */
+.cart-layout {
+  align-items: start;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr minmax(300px, 380px);
+}
+
+.cart-page-items,
+.cart-summary {
+  background: rgba(255, 255, 255, 0.78);
+  border: var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow-soft);
+}
+
+.cart-page-items {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+}
+
+/* Cart Item Card */
+.cart-item {
+  background: var(--white);
+  border: var(--border);
+  border-radius: 18px;
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+
+.cart-item-main {
+  align-items: start;
+  display: flex;
+  gap: 12px;
+}
+
+.cart-item-icon {
+  align-items: center;
+  background: var(--blue);
+  border-radius: 16px;
+  display: flex;
+  flex: 0 0 52px;
+  font-size: 1.7rem;
+  height: 52px;
+  justify-content: center;
+}
+
+.cart-item h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.cart-item p {
+  color: var(--brown);
+  font-weight: 900;
+  margin-bottom: 0;
+}
+
+.cart-actions {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.quantity-control {
+  align-items: center;
+  border: var(--border);
+  border-radius: 999px;
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.quantity-control button,
+.remove-button {
+  background: transparent;
+  border: 0;
+  color: var(--brown);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.quantity-control button {
+  height: 34px;
+  width: 34px;
+}
+
+.quantity-control span {
+  font-weight: 900;
+  min-width: 30px;
+  text-align: center;
+}
+
+.remove-button {
+  text-decoration: underline;
+}
+
+/* Cart Summary */
+.cart-summary {
+  padding: 24px;
+  position: sticky;
+  top: 96px;
+}
+
+.promo-field {
+  display: grid;
+  gap: 8px;
+  font-weight: 900;
+}
+
+.promo-field div {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr auto;
+}
+
+.promo-field button {
+  background: var(--blue);
+  border: var(--border);
+  border-radius: 16px;
+  color: var(--brown);
+  cursor: pointer;
+  font-weight: 900;
+  padding: 0 14px;
+}
+
+.promo-message {
+  color: var(--brown-2);
+  font-size: 0.88rem;
+  font-weight: 800;
+  min-height: 22px;
+}
+
+.summary-row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.summary-row strong {
+  color: var(--brown);
+}
+
+.total-row {
+  border-top: var(--border);
+  font-size: 1.2rem;
+  margin-top: 14px;
+  padding-top: 16px;
+}
+
+.empty-state {
+  padding: 34px;
+  text-align: center;
+}

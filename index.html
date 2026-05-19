@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyBoost | Student Digital Product Store</title>
+    <meta name="description" content="StudyBoost sells digital planners, trackers, templates, and study tools for students." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Patrick+Hand&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/products.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar Start -->
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="logo" href="index.html" aria-label="StudyBoost home">
+          <span class="logo-mark">SB</span>
+          <span class="logo-text">StudyBoost</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="products.html">Products</a>
+          <a href="cart.html">Cart</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <a class="cart-button" href="cart.html" aria-label="View cart">
+          <span aria-hidden="true">&#128722;</span>
+          <span class="cart-count" data-cart-count>0</span>
+        </a>
+      </nav>
+    </header>
+    <!-- Navigation Bar End -->
+
+    <main>
+      <!-- Hero Section Start -->
+      <section class="hero section-band reveal">
+        <span class="doodle doodle-laptop" aria-hidden="true">&#128187;</span>
+        <span class="doodle doodle-pen" aria-hidden="true">&#9998;</span>
+        <span class="doodle doodle-coffee" aria-hidden="true">&#9749;</span>
+        <span class="doodle doodle-headphones" aria-hidden="true">&#127911;</span>
+
+        <div class="hero-content">
+          <p class="eyebrow">Cute digital tools for focused students</p>
+          <h1>Plan your semester with soft, smart study systems.</h1>
+          <p>
+            StudyBoost helps students stay productive with instant-download planners,
+            trackers, Canva templates, timetables, and revision tools made for real campus life.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="products.html">Shop Study Tools</a>
+            <a class="button secondary" href="about.html">Learn About Us</a>
+          </div>
+          <div class="hero-trust" aria-label="Store highlights">
+            <span>Instant digital delivery</span>
+            <span>Editable templates</span>
+            <span>No shipping fees</span>
+          </div>
+        </div>
+
+        <div class="hero-board" aria-label="Decorative stationery board">
+          <div class="paper-note note-blue">
+            <span>planner</span>
+            <strong>Week 08</strong>
+            <small>3 exams, 2 quizzes</small>
+          </div>
+          <div class="paper-note note-pink">
+            <span>budget</span>
+            <strong>RM Goals</strong>
+            <small>save RM50/month</small>
+          </div>
+          <div class="sticker sticker-one">A+</div>
+          <div class="sticker sticker-two">done</div>
+          <div class="doodle-card">&#9986; planner stickers</div>
+        </div>
+      </section>
+      <!-- Hero Section End -->
+
+      <!-- Featured Categories Section Start -->
+      <section class="section-wrap reveal">
+        <div class="section-heading centered">
+          <p class="eyebrow">Shop by study mood</p>
+          <h2>Featured categories</h2>
+          <p>Quickly find the digital tool that matches what your week needs most.</p>
+        </div>
+        <div class="category-grid">
+          <article class="category-card">
+            <span>&#128197;</span>
+            <h3>Planning</h3>
+            <p>Exam planners, timetables, assignment boards, and weekly routines.</p>
+          </article>
+          <article class="category-card">
+            <span>&#128179;</span>
+            <h3>Finance</h3>
+            <p>Simple budget trackers for spending, savings, and allowances.</p>
+          </article>
+          <article class="category-card">
+            <span>&#128187;</span>
+            <h3>Templates</h3>
+            <p>Editable Canva layouts for notes and polished submissions.</p>
+          </article>
+          <article class="category-card">
+            <span>&#9997;</span>
+            <h3>Revision</h3>
+            <p>Flashcards and study packs for active recall and exam confidence.</p>
+          </article>
+        </div>
+      </section>
+      <!-- Featured Categories Section End -->
+
+      <!-- Productivity Statistics Section Start -->
+      <section class="stats section-band reveal" aria-label="StudyBoost statistics">
+        <div class="stat-card">
+          <strong>1,200+</strong>
+          <span>student downloads</span>
+        </div>
+        <div class="stat-card">
+          <strong>4.9/5</strong>
+          <span>average rating</span>
+        </div>
+        <div class="stat-card">
+          <strong>6</strong>
+          <span>digital products</span>
+        </div>
+        <div class="stat-card">
+          <strong>24/7</strong>
+          <span>instant access</span>
+        </div>
+      </section>
+      <!-- Productivity Statistics Section End -->
+
+      <!-- Trending Products Section Start -->
+      <section class="section-wrap reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Most wanted this week</p>
+          <h2>Trending study picks</h2>
+          <p>Popular downloads for students who want a cleaner semester setup.</p>
+        </div>
+        <div class="trending-grid" id="trendingGrid"></div>
+      </section>
+      <!-- Trending Products Section End -->
+
+      <!-- CTA Section Start -->
+      <section class="cta-band reveal">
+        <div>
+          <p class="eyebrow">Semester reset bundle</p>
+          <h2>Start with a calmer study desk today.</h2>
+          <p>Use promo code <strong>STUDY10</strong> in the cart for a simulated 10% discount.</p>
+        </div>
+        <a class="button primary" href="products.html">Build My Cart</a>
+      </section>
+      <!-- CTA Section End -->
+    </main>
+
+    <!-- Footer Start -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <a class="logo" href="index.html">
+          <span class="logo-mark">SB</span>
+          <span class="logo-text">StudyBoost</span>
+        </a>
+        <p>&copy; 2026 StudyBoost. Digital study products for organized student days.</p>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <script src="js/cart.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/products.js" defer></script>
+    <script src="js/animations.js" defer></script>
+  </body>
+</html>

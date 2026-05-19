@@ -1,0 +1,180 @@
+/* Tablet Responsive Design */
+@media (max-width: 980px) {
+  .category-grid,
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-grid,
+  .review-grid,
+  .trending-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero,
+  .why,
+  .contact,
+  .shop-controls,
+  .shop-heading,
+  .product-detail,
+  .cart-layout,
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-summary {
+    position: static;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 64px;
+  }
+
+  .doodle {
+    opacity: 0.22;
+  }
+
+  .hero-board {
+    min-height: 390px;
+  }
+
+  .filter-buttons {
+    justify-content: flex-start;
+  }
+}
+
+/* Mobile Navigation */
+@media (max-width: 860px) {
+  .nav {
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .nav-links {
+    background: var(--cream);
+    border-bottom: var(--border);
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    grid-column: 1 / -1;
+    padding: 8px 0 18px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px 0;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 640px) {
+  .section-band,
+  .section-wrap {
+    padding: 58px 16px;
+  }
+
+  h1 {
+    font-size: clamp(2.35rem, 15vw, 3.45rem);
+  }
+
+  .hero {
+    gap: 30px;
+  }
+
+  .doodle {
+    display: none;
+  }
+
+  .hero-board {
+    min-height: 340px;
+    padding: 18px;
+  }
+
+  .paper-note {
+    width: 174px;
+  }
+
+  .note-blue {
+    left: 18px;
+    top: 38px;
+  }
+
+  .note-pink {
+    right: 18px;
+    top: 130px;
+  }
+
+  .sticker-one {
+    right: 30px;
+    top: 24px;
+  }
+
+  .sticker-two {
+    bottom: 42px;
+    left: 24px;
+  }
+
+  .doodle-card {
+    bottom: 54px;
+    right: 18px;
+  }
+
+  .category-grid,
+  .product-grid,
+  .review-grid,
+  .trending-grid,
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    min-height: auto;
+  }
+
+  .hero-actions,
+  .product-bottom,
+  .product-actions,
+  .cta-band,
+  .footer-inner,
+  .cart-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cta-band {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 26px;
+  }
+
+  .button,
+  .small-add,
+  .quick-view {
+    width: 100%;
+  }
+
+  .promo-field div {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-actions {
+    gap: 10px;
+  }
+
+  .quantity-control {
+    justify-content: center;
+    width: 100%;
+  }
+}
