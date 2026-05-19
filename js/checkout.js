@@ -47,11 +47,29 @@ function setupCheckoutForm() {
     event.preventDefault();
 
     const cart = getCart();
+    const totals = calculateTotals();
     if (!cart.length) {
       alert("Your cart is empty.");
       return;
     }
 
+    // Save receipt data before clearing the cart.
+    const order = {
+      receiptNumber: `SB-${Date.now().toString().slice(-8)}`,
+      date: new Date().toLocaleString("en-MY", {
+        dateStyle: "medium",
+        timeStyle: "short"
+      }),
+      customer: {
+        name: document.querySelector("#customerName").value.trim(),
+        email: document.querySelector("#customerEmail").value.trim()
+      },
+      paymentMethod: document.querySelector("#paymentMethod").value,
+      items: cart,
+      totals
+    };
+
+    localStorage.setItem("studyboost-latest-order", JSON.stringify(order));
     downloadList.innerHTML = cart.map((item) => `<span>${item.name}</span>`).join("");
     successModal.classList.add("open");
     successModal.setAttribute("aria-hidden", "false");

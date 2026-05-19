@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receipt | StudyBoost</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Patrick+Hand&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/receipt.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar Start -->
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="logo" href="index.html"><img class="logo-image" src="images/logo/studyboost-logo.svg" alt="StudyBoost" /></a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="products.html">Products</a>
+          <a href="cart.html">Cart</a>
+          <a href="receipt.html" class="active">Receipt</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <a class="cart-button" href="cart.html" aria-label="View cart"><span aria-hidden="true">&#128722;</span><span class="cart-count" data-cart-count>0</span></a>
+      </nav>
+    </header>
+    <!-- Navigation Bar End -->
+
+    <main>
+      <!-- Receipt Section Start -->
+      <section class="section-band reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Order receipt</p>
+          <h1>Your StudyBoost receipt.</h1>
+          <p>This receipt confirms the simulated order and digital delivery details for the frontend demo.</p>
+        </div>
+
+        <article class="receipt-card" id="receiptCard">
+          <!-- JavaScript renders the latest order receipt here. -->
+        </article>
+      </section>
+      <!-- Receipt Section End -->
+    </main>
+
+    <footer class="footer"><div class="footer-inner"><a class="logo" href="index.html"><img class="logo-image" src="images/logo/studyboost-logo.svg" alt="StudyBoost" /></a><p>&copy; 2026 StudyBoost.</p></div></footer>
+    <script src="js/cart.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/receipt.js" defer></script>
+    <script src="js/animations.js" defer></script>
+  </body>
+</html>

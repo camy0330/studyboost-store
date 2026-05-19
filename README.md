@@ -58,6 +58,7 @@ studyboost-store/
 |-- product-details.html
 |-- cart.html
 |-- checkout.html
+|-- receipt.html
 |-- contact.html
 |
 |-- css/
@@ -66,6 +67,7 @@ studyboost-store/
 |   |-- products.css
 |   |-- cart.css
 |   |-- checkout.css
+|   |-- receipt.css
 |   `-- responsive.css
 |
 |-- js/
@@ -73,6 +75,7 @@ studyboost-store/
 |   |-- products.js
 |   |-- cart.js
 |   |-- checkout.js
+|   |-- receipt.js
 |   `-- animations.js
 |
 |-- images/
@@ -92,6 +95,7 @@ studyboost-store/
 - `product-details.html` - Dynamic product detail page using the product ID in the URL
 - `cart.html` - Cart review, quantity controls, promo code, and order summary
 - `checkout.html` - Simulated checkout form and success popup
+- `receipt.html` - Latest order receipt with printable receipt layout
 - `contact.html` - Contact form for customer questions
 
 ## Promo Codes
