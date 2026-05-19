@@ -13,16 +13,31 @@ function getProductMockup(product, size = "card") {
   const sizeClass = size === "large" ? " large" : "";
   const mockup = product.mockup;
 
-  if (mockup === "planner" || mockup === "dashboard") {
+  if (mockup === "planner") {
     return `
       <div class="product-mockup${sizeClass}" aria-hidden="true">
-        <div class="mockup-window">
+        <div class="mockup-window planner-preview">
           <div class="window-bar"><span></span><span></span><span></span></div>
+          <div class="mockup-title">Exam Planner</div>
           <div class="mockup-lines">
-            <span></span><span></span><span></span>
+            <span>Study Goals</span><span>Countdown</span><span>Subject Checklist</span>
           </div>
           <div class="mockup-grid">
-            <span></span><span></span><span></span>
+            <span>Math</span><span>Bio</span><span>Eng</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  if (mockup === "dashboard") {
+    return `
+      <div class="product-mockup${sizeClass}" aria-hidden="true">
+        <div class="mockup-window dashboard-preview">
+          <div class="window-bar"><span></span><span></span><span></span></div>
+          <div class="mockup-title">Assignment Tracker</div>
+          <div class="dashboard-columns">
+            <span>Due Date</span><span>Progress</span><span>Status</span>
           </div>
         </div>
       </div>
@@ -33,10 +48,10 @@ function getProductMockup(product, size = "card") {
     return `
       <div class="product-mockup${sizeClass}" aria-hidden="true">
         <div class="mockup-sheet">
-          <div class="sheet-header"></div>
-          <div class="sheet-row"><span></span><span></span><span></span></div>
-          <div class="sheet-row"><span></span><span></span><span></span></div>
-          <div class="sheet-row"><span></span><span></span><span></span></div>
+          <div class="sheet-header">Budget Tracker</div>
+          <div class="sheet-row"><span>Income</span><span>Expenses</span><span>Savings</span></div>
+          <div class="sheet-row"><span>RM</span><span>Food</span><span>Goal</span></div>
+          <div class="mini-chart"><span></span><span></span><span></span></div>
         </div>
       </div>
     `;
@@ -46,8 +61,13 @@ function getProductMockup(product, size = "card") {
     return `
       <div class="product-mockup${sizeClass}" aria-hidden="true">
         <div class="mockup-canva">
-          <div class="canva-sidebar"></div>
-          <div class="canva-page"><span></span><span></span><span></span><span></span></div>
+          <div class="canva-sidebar"><span>Topic</span><span>Layout</span></div>
+          <div class="canva-page">
+            <strong>Lecture Notes</strong>
+            <span>Key Points</span>
+            <span>Summary</span>
+            <span>Diagram</span>
+          </div>
         </div>
       </div>
     `;
@@ -58,9 +78,10 @@ function getProductMockup(product, size = "card") {
       <div class="product-mockup${sizeClass}" aria-hidden="true">
         <div class="mockup-tablet">
           <div class="tablet-screen">
-            <span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span>
+            <strong>Study Timetable</strong>
+            <span>Monday</span><span>Tuesday</span><span>Revision</span>
+            <span>9 AM</span><span>Math</span><span>Bio</span>
+            <span>Break</span><span>Notes</span><span>Quiz</span>
           </div>
         </div>
       </div>
@@ -72,9 +93,10 @@ function getProductMockup(product, size = "card") {
       <div class="product-mockup${sizeClass}" aria-hidden="true">
         <div class="mockup-phone">
           <div class="phone-screen">
-            <span class="flashcard-line"></span>
-            <span class="flashcard-line"></span>
-            <span class="flashcard-line"></span>
+            <strong>Flashcards</strong>
+            <span class="flashcard-line">Question</span>
+            <span class="flashcard-line">Answer</span>
+            <span class="flashcard-line">Review</span>
           </div>
         </div>
       </div>
@@ -84,8 +106,8 @@ function getProductMockup(product, size = "card") {
   return `
     <div class="product-mockup${sizeClass}" aria-hidden="true">
       <div class="mockup-paper">
-        <div class="paper-title"></div>
-        <div class="paper-check"><span></span><span></span><span></span></div>
+        <div class="paper-title">Planner</div>
+        <div class="paper-check"><span>Task</span><span>Focus</span><span>Done</span></div>
       </div>
     </div>
   `;
@@ -136,7 +158,7 @@ function renderProducts() {
       (product) => `
         <!-- Product Card -->
         <article class="product-card ${product.trending ? "featured" : ""}">
-          <!-- Product Image Area: mockup and wishlist only, no text action buttons here. -->
+          <!-- Product Image Area: mockup, wishlist, and details button have reserved safe spaces. -->
           <div class="product-art">
             ${getProductMockup(product)}
             <button
@@ -147,6 +169,7 @@ function renderProducts() {
             >
               ${favorites.has(product.id) ? "&#9829;" : "&#9825;"}
             </button>
+            <a class="quick-view" href="product-details.html?id=${product.id}">View Details</a>
           </div>
           <!-- Product Content Area: all readable text and actions stay below the image. -->
           <div class="product-body">
@@ -168,7 +191,6 @@ function renderProducts() {
             <div class="product-bottom">
               <span class="price">${formatPrice(product.price)}</span>
               <div class="product-actions">
-                <a class="quick-view" href="product-details.html?id=${product.id}">View Details</a>
                 <button class="button primary small-add" type="button" data-add="${product.id}">Add to Cart</button>
               </div>
             </div>

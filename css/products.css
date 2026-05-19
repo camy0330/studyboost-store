@@ -99,6 +99,10 @@
   transform: translateY(-6px);
 }
 
+.product-card.featured .product-art {
+  padding-top: 38px;
+}
+
 .product-card.featured::before {
   background: var(--mint);
   border: var(--border);
@@ -121,10 +125,10 @@
     radial-gradient(circle at 16px 16px, rgba(104, 68, 45, 0.14) 2px, transparent 3px);
   background-size: auto, 34px 34px;
   display: flex;
-  height: 178px;
+  height: 214px;
   justify-content: center;
   overflow: hidden;
-  padding: 24px;
+  padding: 34px 24px 58px;
   position: relative;
 }
 
@@ -150,9 +154,9 @@
 
 .mockup-window {
   border-radius: 12px;
-  height: 106px;
+  height: 124px;
   overflow: hidden;
-  width: 178px;
+  width: 190px;
 }
 
 .window-bar {
@@ -173,56 +177,104 @@
 
 .mockup-lines {
   display: grid;
-  gap: 7px;
-  padding: 13px;
+  gap: 6px;
+  padding: 8px 13px;
 }
 
 .mockup-lines span,
 .sheet-row span,
 .flashcard-line {
-  background: rgba(104, 68, 45, 0.16);
+  background: rgba(104, 68, 45, 0.1);
   border-radius: 999px;
+  color: rgba(44, 36, 30, 0.72);
   display: block;
-  height: 8px;
+  font-size: 0.48rem;
+  font-weight: 900;
+  height: auto;
+  line-height: 1;
+  padding: 4px 6px;
 }
 
-.mockup-lines span:nth-child(1) { width: 72%; }
-.mockup-lines span:nth-child(2) { width: 94%; }
-.mockup-lines span:nth-child(3) { width: 55%; }
+.mockup-title {
+  color: var(--brown);
+  font-size: 0.6rem;
+  font-weight: 900;
+  padding: 8px 13px 0;
+}
+
+.mockup-lines span:nth-child(1) { width: 78%; }
+.mockup-lines span:nth-child(2) { width: 70%; }
+.mockup-lines span:nth-child(3) { width: 94%; }
 
 .mockup-grid {
   display: grid;
   gap: 6px;
   grid-template-columns: repeat(3, 1fr);
-  padding: 12px;
+  padding: 2px 13px 11px;
 }
 
 .mockup-grid span {
   background: var(--blue);
   border-radius: 7px;
-  height: 22px;
+  color: var(--brown);
+  font-size: 0.45rem;
+  font-weight: 900;
+  min-height: 19px;
+  padding: 5px 3px;
+  text-align: center;
+}
+
+.dashboard-columns {
+  display: grid;
+  gap: 7px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 12px 13px;
+}
+
+.dashboard-columns span {
+  background: linear-gradient(180deg, var(--blue-2), var(--pink-2));
+  border: 1px solid rgba(104, 68, 45, 0.1);
+  border-radius: 8px;
+  color: rgba(44, 36, 30, 0.72);
+  font-size: 0.47rem;
+  font-weight: 900;
+  min-height: 52px;
+  padding: 8px 4px;
+  text-align: center;
 }
 
 .mockup-tablet {
   border-radius: 22px;
-  height: 118px;
-  padding: 14px;
-  width: 150px;
+  height: 130px;
+  padding: 12px;
+  width: 162px;
 }
 
 .tablet-screen {
   background: linear-gradient(135deg, var(--blue-2), var(--pink-2));
   border-radius: 14px;
   display: grid;
-  gap: 7px;
-  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
   height: 100%;
-  padding: 12px;
+  padding: 10px;
+}
+
+.tablet-screen strong {
+  color: var(--brown);
+  font-size: 0.55rem;
+  grid-column: 1 / -1;
+  line-height: 1;
 }
 
 .tablet-screen span {
   background: rgba(104, 68, 45, 0.18);
   border-radius: 6px;
+  color: rgba(44, 36, 30, 0.68);
+  font-size: 0.42rem;
+  font-weight: 900;
+  padding: 4px 3px;
+  text-align: center;
 }
 
 .mockup-paper {
@@ -236,8 +288,11 @@
 .paper-title {
   background: var(--pink);
   border-radius: 999px;
-  height: 14px;
+  color: var(--brown);
+  font-size: 0.55rem;
+  font-weight: 900;
   margin-bottom: 13px;
+  padding: 5px 8px;
   width: 72%;
 }
 
@@ -249,6 +304,9 @@
 
 .paper-check span {
   border-bottom: 2px solid rgba(104, 68, 45, 0.24);
+  color: rgba(44, 36, 30, 0.68);
+  font-size: 0.48rem;
+  font-weight: 900;
   height: 14px;
 }
 
@@ -263,14 +321,20 @@
   background: var(--blue-2);
   border-radius: 17px;
   display: grid;
-  gap: 8px;
+  gap: 7px;
   height: 100%;
-  padding: 13px 9px;
+  padding: 11px 8px;
+}
+
+.phone-screen strong {
+  color: var(--brown);
+  font-size: 0.46rem;
+  line-height: 1;
+  text-align: center;
 }
 
 .flashcard-line:nth-child(1) {
   background: var(--pink);
-  height: 24px;
 }
 
 .mockup-canva {
@@ -286,6 +350,19 @@
 .canva-sidebar {
   background: var(--pink-2);
   border-radius: 10px;
+  display: grid;
+  gap: 6px;
+  padding: 10px 7px;
+}
+
+.canva-sidebar span {
+  background: rgba(104, 68, 45, 0.1);
+  border-radius: 999px;
+  color: rgba(44, 36, 30, 0.68);
+  font-size: 0.45rem;
+  font-weight: 900;
+  padding: 4px;
+  text-align: center;
 }
 
 .canva-page {
@@ -297,10 +374,19 @@
   padding: 10px;
 }
 
+.canva-page strong {
+  color: var(--brown);
+  font-size: 0.52rem;
+  line-height: 1.05;
+}
+
 .canva-page span {
   background: rgba(104, 68, 45, 0.16);
   border-radius: 999px;
-  height: 8px;
+  color: rgba(44, 36, 30, 0.68);
+  font-size: 0.42rem;
+  font-weight: 900;
+  padding: 4px 5px;
 }
 
 .mockup-sheet {
@@ -312,7 +398,10 @@
 
 .sheet-header {
   background: var(--mint);
-  height: 22px;
+  color: var(--brown);
+  font-size: 0.58rem;
+  font-weight: 900;
+  padding: 6px 10px;
 }
 
 .sheet-row {
@@ -321,6 +410,24 @@
   grid-template-columns: 1fr 1fr 1fr;
   padding: 8px 10px 0;
 }
+
+.mini-chart {
+  align-items: end;
+  display: flex;
+  gap: 6px;
+  height: 28px;
+  padding: 7px 10px 0;
+}
+
+.mini-chart span {
+  background: var(--blue);
+  border-radius: 999px 999px 0 0;
+  flex: 1;
+}
+
+.mini-chart span:nth-child(1) { height: 12px; }
+.mini-chart span:nth-child(2) { height: 20px; }
+.mini-chart span:nth-child(3) { height: 16px; }
 
 .product-mockup.large .mockup-window,
 .product-mockup.large .mockup-sheet,
@@ -363,11 +470,15 @@
 
 .quick-view {
   border-radius: 999px;
+  bottom: 14px;
   font-size: 0.82rem;
   font-weight: 900;
   justify-content: center;
   min-height: 38px;
   padding: 0 14px;
+  position: absolute;
+  right: 16px;
+  z-index: 4;
 }
 
 .product-body {

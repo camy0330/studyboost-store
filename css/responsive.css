@@ -159,9 +159,14 @@
     padding: 26px;
   }
 
+  .cta-band .button {
+    align-self: center;
+    min-width: 190px;
+    width: auto;
+  }
+
   .button,
-  .small-add,
-  .quick-view {
+  .small-add {
     width: 100%;
   }
 

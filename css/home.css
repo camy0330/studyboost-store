@@ -276,6 +276,16 @@
   padding: 34px;
 }
 
+/* CTA button sizing keeps "Build My Cart" on one clean line. */
+.cta-band .button {
+  flex: 0 0 auto;
+  min-width: 174px;
+  padding-left: 28px;
+  padding-right: 28px;
+  text-align: center;
+  white-space: nowrap;
+}
+
 .review-grid {
   display: grid;
   gap: 20px;
